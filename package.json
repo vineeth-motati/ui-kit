@@ -1,8 +1,8 @@
 {
-  "name": "my-module",
+  "name": "ui-kit",
   "version": "1.0.0",
-  "description": "My new Nuxt module",
-  "repository": "your-org/my-module",
+  "description": "My UI Kit",
+  "repository": "https://github.com/vineeth-motati/ui-kit",
   "license": "MIT",
   "type": "module",
   "exports": {
@@ -24,6 +24,7 @@
     "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxi prepare playground",
     "release": "npm run lint && npm run test && npm run prepack && changelogen --release && npm publish && git push --follow-tags",
     "lint": "eslint .",
+    "lintfix": "eslint . --fix",
     "test": "vitest run",
     "test:watch": "vitest watch",
     "test:types": "vue-tsc --noEmit && cd playground && vue-tsc --noEmit"
@@ -44,5 +45,9 @@
     "typescript": "latest",
     "vitest": "^1.6.0",
     "vue-tsc": "^2.0.16"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "semi": false
   }
 }
